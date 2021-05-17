@@ -1,6 +1,3 @@
-require 'net/http'
-require 'json'
-
 module Notionar
   class Client
     def initialize(token)
@@ -72,7 +69,7 @@ module Notionar
           raise "Unknown method - #{method}"
         end
 
-      JSON.parse(response)
+      { body: JSON.parse(response.body), code: response.code }
     end
   end
 end
