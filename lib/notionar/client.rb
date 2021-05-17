@@ -1,6 +1,3 @@
-require 'net/http'
-require 'json'
-
 module Notionar
   class Client
     def initialize(token)
